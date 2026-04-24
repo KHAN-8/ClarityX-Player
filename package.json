@@ -1,0 +1,61 @@
+{
+  "name": "clarityx",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "main.cjs",
+  "description": "ClarityX - True AI Enhanced Video Player",
+  "author": "Antigravity",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron:start": "electron .",
+    "electron:build": "npm run build && set CSC_IDENTITY_AUTO_DISCOVERY=false && electron-builder"
+  },
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "electron": "^29.1.0",
+    "electron-builder": "^24.13.3",
+    "electron-is-dev": "^2.0.0",
+    "eslint": "^10.2.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "jimp": "^1.6.1",
+    "png-to-ico": "^3.0.1",
+    "rcedit": "^5.0.2",
+    "vite": "^8.0.10"
+  },
+  "build": {
+    "appId": "com.clarityx.app",
+    "productName": "ClarityX Player",
+    "directories": {
+      "output": "dist-app"
+    },
+    "files": [
+      "dist/**/*",
+      "main.cjs",
+      "Icon.png"
+    ],
+    "extraResources": [
+      {
+        "from": "yt-dlp.exe",
+        "to": "yt-dlp.exe"
+      }
+    ],
+    "win": {
+      "target": "dir",
+      "icon": "Icon.ico"
+    },
+    "forceCodeSigning": false
+  }
+}
